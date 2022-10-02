@@ -45,8 +45,8 @@ document.getElementById('btnLess').addEventListener('click', function () {
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
-            maxValue = answerNumber + 1;
-            answerNumber  = Math.floor(minValue + maxValue);
+            maxValue = answerNumber - 1;
+            answerNumber  = Math.abs(Math.floor((minValue + maxValue)/2));
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             answerField.innerText = `Вы загадали число ${answerNumber }?`;
@@ -60,4 +60,3 @@ document.getElementById('btnEqual').addEventListener('click', function () {
         gameRun = false;
     }
 })
-
